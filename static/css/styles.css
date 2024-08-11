@@ -114,7 +114,7 @@ body{
     align-items: center;
     justify-content: center; /* Centers items horizontally */
     padding: 20px 20px; /* Increase padding to increase header height */
-    background-image: url("public\photos\Background Photo for Header.jpg"); /* Add the background image */
+    background-image: url("/public/photos/Background Photo for Header.jpg"); /* Add the background image */
     background-size: cover; /* Stretch the image to cover the entire header */
     background-position: center; /* Center the background image */
     position: relative; /* Needed for the overlay */
@@ -465,11 +465,11 @@ nav ul li.active a {
 
 /* Specific Background Images for Cards */
 .card:nth-of-type(1) {
-    background-image: url('public\photos\brown-sugar-cubes-concrete-top-view.jpg'); /* Update with your image path */
+    background-image: url('/public/photos/brown-sugar-cubes-concrete-top-view.jpg'); /* Update with your image path */
 }
 
 .card:nth-of-type(2) {
-    background-image: url('public\photos\various-spices-grains-laid-out-marketplace-table.jpg'); /* Update with your image path */
+    background-image: url('/public/photos/various-spices-grains-laid-out-marketplace-table.jpg'); /* Update with your image path */
 }
 
 .card.active {
