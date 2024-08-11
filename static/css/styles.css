@@ -1,0 +1,521 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body{
+    margin: 0;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    /* background-color:rgba(144, 160, 202, 0.386); */
+}
+.slider h3 {
+    font-family: 'Roboto', sans-serif; /* Apply the Google Font */
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-weight: 700; /* Apply bold weight */
+    color: #8c5a5a; /* Set the text color */
+    margin: 0; /* Remove default margins */
+    padding: 10px; /* Add padding for spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+}
+
+
+.slider {
+    text-align: center; /* Center align the content within the slider */
+    margin: 20px auto; /* Center align the slider on the page */
+    width: 50%;
+    max-width: 800px; /* Max width of the slider */
+
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #f3ecec; */
+    margin-bottom: 40px; /* Add margin at the bottom to separate it from the footer */
+}
+
+.slides {
+    display: flex;
+    width: 100%; /* Width should be 100% * number of slides */
+    animation: slide 15s infinite; /* Adjust timing as needed */
+}
+
+.slides img {
+    width: 100%;
+    height: 100%; /* Ensure the images fill the slider */
+    object-fit: cover; /* Ensure the images cover the container without stretching */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    20% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    45% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    70% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    95% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* Adjust the slider for smaller screens */
+@media (max-width: 600px) {
+    .slider {
+        width: 90%; /* Increase the width to fill more space on mobile screens */
+        max-width: 100%; /* Ensure it doesn't exceed the screen width */
+        height: 250px; /* Adjust height as needed */
+    }
+
+    .slides img {
+        width: 100%;
+        height: 100%; /* Ensure the images fill the slider */
+        object-fit: cover; /* Ensure the images cover the container */
+    }
+}
+
+/* Adjust the slider for iPad screens */
+@media (min-width: 601px) and (max-width: 1024px){
+    .slider {
+        width: 70%; /* Increase the width to fill more space on ipad screens */
+        max-width: 100%; /* Ensure it doesn't exceed the screen width */
+        height: 250px; /* Adjust height as needed */
+    }
+
+    .slides img {
+        width: 100%;
+        height: 250px; /* Ensure the images fill the slider */
+        object-fit: fill; /* Ensure the images cover the container */
+    }
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers items horizontally */
+    padding: 20px 20px; /* Increase padding to increase header height */
+    background-image: url("public\photos\Background Photo for Header.jpg"); /* Add the background image */
+    background-size: cover; /* Stretch the image to cover the entire header */
+    background-position: center; /* Center the background image */
+    position: relative; /* Needed for the overlay */
+    height: 150px; /* Set the height of the header */
+    width: 100vw;
+    overflow: hidden; /* Hide overflow from blur */
+    /*margin-bottom: 40px;*/
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Use the same background image */
+    background-size: cover; /* Stretch the image */
+    background-position: center;
+    filter: blur(2px); /* Apply blur to the image */
+    z-index: 1; /* Place below the content */
+}
+
+.logo{
+    position: relative;
+    z-index: 2; /* Ensure text and logo appear above the blur */
+}
+
+.logo img {
+    height: 195px;
+    margin-right: 20px;
+}
+
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 600px) {
+    .header {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 10px; /* Reduce padding */
+        background-position: center top; /* Adjust background position */
+    }
+
+    .logo img {
+        height: 80px; /* Adjust logo height for smaller screens */
+        margin-right: 10px; /* Reduce margin */
+    }
+
+    nav ul {
+        justify-content: space-around; /* Distribute navigation items evenly */
+    }
+
+    nav ul li a {
+        padding: 15px 20px; /* Increase padding for better touch targets */
+    }
+
+    nav ul li.active a {
+        background-color: #ffffff; /* Background color for active link */
+        padding-bottom: 20px; /* Extend highlight to the bottom */
+        box-sizing: border-box; /* Include padding in element's total width/height */
+    }
+
+    /*.slides img {*/
+    /*    width: 1600px;*/
+    /*    height: 400px; !* Ensure the images fill the slider *!*/
+    /*    object-fit: cover; !* Ensure the images cover the container without stretching *!*/
+    /*    flex-shrink: 0; !* Prevent images from shrinking *!*/
+    /*}*/
+}
+ /*Adjust the height for smaller screens */
+/*@media (max-width: 600px) {*/
+/*    .slides img {*/
+/*        width: 100%;*/
+/*        height: 200px; !* Adjust the height for mobile screens *!*/
+/*        object-fit: contain;*/
+/*    }*/
+/*}*/
+
+@media (max-width: 600px) {
+    .logo img {
+        height: 60px; /* Further reduce logo height for very small screens */
+    }
+}
+
+.footer {
+    background-color:  #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+
+.navbar-container {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Highlight the active link */
+nav ul li.active a {
+    color: #333; /* Text color for active link */
+    background-color: rgba(225, 202, 202, 0.61); /* Background color for active link */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+
+/* Fixed icons */
+.fixed-icons {
+    position: fixed;
+    right: 10px; /* Distance from the right edge */
+    top: 50%; /* Position at the vertical center */
+    transform: translateY(-50%); /* Adjust to center vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the text and icons horizontally */
+    z-index: 9999; /* Ensure the icons are on top of all other content */
+    /* Add a background for better visibility */
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    /*padding: 5px;*/
+    /*border-radius: 5px;*/
+    opacity: 0.8; /* Set transparency level */
+}
+
+/* Media query for smaller screens */
+@media  (min-width: 600px) and (max-width: 900px) {
+    .fixed-icons {
+        right: 5px; /* Adjust right position for smaller screens */
+        /* Optionally adjust icon size for mobile */
+        /* font-size: 14px; */
+    }
+}
+
+
+/*.franchise-text {*/
+/*    font-size: 16px; !* Adjust font size as needed *!*/
+/*    color: red; !* Text color *!*/
+/*    margin-bottom: 10px; !* Space between text and icons *!*/
+/*    animation: vibrate 0.5s infinite; !* Apply the vibration animation *!*/
+/*    font-weight: bold; !* Make the text bold *!*/
+/*}*/
+
+/*@keyframes vibrate {*/
+/*    0% { transform: translateX(0); }*/
+/*    25% { transform: translateX(-2px); }*/
+/*    50% { transform: translateX(2px); }*/
+/*    75% { transform: translateX(-2px); }*/
+/*    100% { transform: translateX(0); }*/
+/*}*/
+
+.icon {
+    background-color: #000; /* Background color of the icon */
+    color: white; /* Icon color */
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.icon:hover {
+    background-color: #444; /* Change background color on hover */
+}
+
+.icon.whatsapp {
+    background-color: #25D366; /* WhatsApp color */
+}
+
+.icon.email {
+    background-color: #007BFF; /* Email color */
+}
+
+.videoTextcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff8e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.video-container {
+    width: 50%;
+    overflow: hidden;
+    border-right: 5px solid #d4a373;
+    padding-left: 8px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-container {
+    width: 50%;
+    padding: 20px;
+    color: #5a4e3d;
+    font-family: 'Dancing Script', cursive;
+    animation: fadeIn 2s ease-in-out;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-height: 250px; /* Set a maximum height to limit the container size */
+    /*box-sizing: border-box; !* Include padding and border in the element's total width and height *!*/
+}
+
+.text-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    /*margin: 0; !* Remove default margins *!*/
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 600px){
+    .videoTextcontainer {
+        flex-direction: column; /* Stack video and text vertically */
+    }
+
+    .video-container {
+        width: 100%; /* Full width for video */
+        border-right: none; /* Remove border */
+        padding-left: 0;
+    }
+
+    .video-container video {
+        height: auto; /* Let the height adjust automatically */
+    }
+
+    .text-container {
+        width: 100%; /* Full width for text */
+        max-height: none; /* Remove max-height restriction */
+        padding: 10px; /* Adjust padding */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    .text-container p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        margin: 0; /* Remove default margins */
+    }
+}
+
+
+/* Card Container Styles */
+.cards-container {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    overflow: hidden;
+    height: 400px; /* Ensure the container height is sufficient */
+    border: 1px solid #ddd; /* Border on all sides */
+}
+
+/* Card Styles */
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover; /* Ensure background image covers the card */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating background image */
+    overflow: hidden;
+}
+
+/* Overlay and Content Styles */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, 0.5); /* Blue overlay with opacity */
+    z-index: 1; /* Place overlay above background image */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for overlay */
+}
+
+.card-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above overlay */
+    color: #ffffff; /* White text color for visibility */
+}
+
+/* Specific Background Images for Cards */
+.card:nth-of-type(1) {
+    background-image: url('public\photos\brown-sugar-cubes-concrete-top-view.jpg'); /* Update with your image path */
+}
+
+.card:nth-of-type(2) {
+    background-image: url('public\photos\various-spices-grains-laid-out-marketplace-table.jpg'); /* Update with your image path */
+}
+
+.card.active {
+    opacity: 1;
+    transform: scale(1.02); /* Slightly enlarge the active card */
+}
+
+/* Card Heading Styles */
+.card h2 {
+    font-size: 2em;
+    color: #ffffff; /* White color for the heading */
+    margin-bottom: 15px;
+    font-weight: 700; /* Bold heading */
+    font-family: 'Playfair Display', serif; /* Elegant serif font for heading */
+}
+
+/* Card Paragraph Styles */
+.card p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff; /* White color for the text */
+    margin: 0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+    .cards-container {
+        padding: 15px;
+        height: 400px; /* Adjust height for smaller screens */
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+    }
+
+    .card p {
+        font-size: 1em;
+    }
+}
