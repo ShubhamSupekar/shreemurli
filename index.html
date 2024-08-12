@@ -10,24 +10,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
 
-    <!--    &lt;!&ndash; Google Translate Script &ndash;&gt;-->
+    <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en',
+                pageLanguage: 'en', // Original page language
                 includedLanguages: 'en,hi,mr',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
+        }
 
-            // Automatically trigger translation to Marathi (mr) after initialization
-            var translateSelect = document.querySelector('.goog-te-combo');
-            if (translateSelect) {
-                translateSelect.value = 'mr'; // Set Marathi as the default language
-                translateSelect.dispatchEvent(new Event('change')); // Trigger the change event
+        // Function to check and force Marathi translation
+        function forceMarathiTranslation() {
+            if (!document.cookie.includes('googtrans=/en/mr')) {
+                // Set the cookie to ensure translation
+                document.cookie = "googtrans=/en/mr; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+                // Reload the page to apply the translation
+                location.reload();
             }
         }
+
+        // Load Google Translate script and force Marathi translation
+        window.addEventListener('load', function () {
+            forceMarathiTranslation();
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </head>
 <body>
