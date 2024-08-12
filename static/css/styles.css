@@ -10,6 +10,41 @@ body{
     font-family: Arial, sans-serif;
     /* background-color:rgba(144, 160, 202, 0.386); */
 }
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 80px; /* Adjusted to move slightly to the left */
+    z-index: 1000;
+    background-color: #fff;
+    padding: 10px; /* Increased padding for a bigger button */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.language-selector select {
+    border: none;
+    background-color: transparent;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    padding: 5px 10px; /* Added padding inside the select */
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 600px) {
+    .language-selector {
+        top: 20px; /* Move down to avoid overlapping */
+        right: 20px; /* Adjusted to the left edge of the screen */
+        background: transparent;
+    }
+
+    .language-selector select {
+        font-size: 14px; /* Decreased font size for mobile */
+    }
+}
+
+
 .slider h3 {
     font-family: 'Roboto', sans-serif; /* Apply the Google Font */
     font-size: 1.5rem; /* Adjust the font size as needed */
